@@ -20,12 +20,10 @@ BOOT.BIN
 boot.scr
 image.ub
 system.bit
-yolov5_nano_pt.xmodel
 ```
 
 > Note: in the validated permanent runtime image, the YOLOv5 Nano model is also installed inside the PetaLinux root filesystem at:
 >
-> `/usr/share/kv260-vision/model/yolov5_nano_pt.xmodel`
 >
 > Therefore a separate `.xmodel` file is only needed if you want to replace or inspect the model independently.
 
