@@ -1,6 +1,6 @@
 # Quick Start — KV260 Autonomous Vehicle Vision
 
-This guide is the easy demonstration path for running the project without rebuilding the full Vivado/PetaLinux toolchain.
+This is the validated **easy demo path**. It uses the prebuilt KV260 runtime and does not require rebuilding Vivado or PetaLinux.
 
 ## 1. Clone the repository
 
@@ -9,27 +9,43 @@ git clone https://github.com/sohan2961/kv260-autonomous-vehicle-vision.git
 cd kv260-autonomous-vehicle-vision
 ```
 
-## 2. Download the prebuilt release
+The large files under `v1/` use Git LFS:
 
-Download the validated prebuilt KV260 release from the GitHub Releases page.
-
-The release bundle should contain:
-
-```text
-BOOT.BIN
-boot.scr
-image.ub
-system.bit
+```bash
+git lfs install
+git lfs pull
 ```
 
-> Note: in the validated permanent runtime image, the YOLOv5 Nano model is also installed inside the PetaLinux root filesystem at:
->
->
-> Therefore a separate `.xmodel` file is only needed if you want to replace or inspect the model independently.
+Alternatively, download the same validated binaries from the GitHub `v1.0.0` Release.
+
+## 2. Verify the validated v1 artifacts
+
+```bash
+cd v1
+sha256sum -c SHA256SUMS.txt
+```
+
+Expected:
+
+```text
+BOOT.BIN: OK
+boot.scr: OK
+image.ub: OK
+system.bit: OK
+```
+
+Validated hashes:
+
+```text
+a75156bdd7dbc718a10090e835fd836a98779c341d1aa2e7f8c0715930953499  BOOT.BIN
+03c6e6b965bbfbfb7fdec4bf59fedef8d9a43dbc1a758fb5d935b52be5945bb9  boot.scr
+c25df88ae6ad5334738f18fb9d00118404c30de4c45b724424d9e8b759d7dd40  image.ub
+6450eee7649e990807270896642bf30b211851796f1d8b0cd0f33bb5f4f908e4  system.bit
+```
 
 ## 3. Prepare the SD card
 
-Copy the prebuilt boot files to the prepared KV260 SD card boot partition:
+Copy these files to the prepared KV260 FAT boot partition:
 
 ```text
 BOOT.BIN
@@ -40,90 +56,103 @@ system.bit
 
 Insert the SD card into the KV260.
 
-## 4. Connect the laptop/PC to the KV260
+The validated `image.ub` already contains the YOLOv5 Nano model and KV260 applications.
 
-Connect the laptop or Windows PC directly to the KV260 with Ethernet.
+## 4. Connect Ethernet
+
+Use a direct Ethernet connection:
 
 ```text
-Laptop/PC Ethernet : 192.168.50.1/24
-KV260               : 192.168.50.2/24
+Host PC / laptop : 192.168.50.1/24
+KV260            : 192.168.50.2/24
 ```
 
-The KV260 address is configured automatically by the permanent runtime.
+The KV260 address is configured automatically by the validated runtime.
 
-Check connectivity:
+From Windows:
 
 ```powershell
 ping 192.168.50.2
 ```
 
-## 5. Boot the KV260
+## 5. Boot and verify the KV260
 
-Power on the KV260 and wait for PetaLinux to finish booting.
+Power on the KV260 and wait for PetaLinux to boot.
 
-The validated image automatically loads the DPU and Sobel drivers.
+The validated runtime automatically loads the DPU and Sobel drivers.
 
-Expected DPU fingerprint:
+Optional DPU check:
+
+```bash
+sudo xdputil query
+```
+
+Expected fingerprint:
 
 ```text
 0x101000056010407
 ```
 
-## 6. Start the KV260 vision application
+## 6. Start the live KV260 application
 
-On the KV260:
+For the exact browser-enabled configuration validated in this project, run on the KV260:
 
 ```bash
-sudo start-vision-demo
+sudo /usr/bin/kv260-vision-network-app \
+  /usr/share/kv260-vision/model/yolov5_nano_pt.xmodel \
+  --tcp 5000 \
+  /tmp/kv260_carla_live.avi \
+  --stream 8080
 ```
 
-The intended demo configuration is:
+Expected ports:
 
 ```text
-TCP input port : 5000
-HTTP/MJPEG     : 8080
-KV260 IP       : 192.168.50.2
+TCP CARLA input : 5000
+HTTP/MJPEG      : 8080
+KV260 IP        : 192.168.50.2
 ```
 
-If the installed `start-vision-demo` wrapper does not yet include browser streaming, start the network application explicitly with `--stream 8080`.
+`sudo start-vision-demo` is also installed in the runtime, but the command above explicitly enables the browser stream and therefore documents the exact validated live-demo invocation.
 
-## 7. Start CARLA on the Windows computer
+## 7. Start CARLA on Windows
 
 Validated environment:
 
 ```text
-CARLA 0.9.9.2
-Python 3.7
-RGB camera: 640x480
-Target rate: 10 FPS
+CARLA       : 0.9.9.2
+Python      : 3.7
+RGB camera  : 640×480
+Target rate : 10 FPS
 ```
 
-Start the CARLA simulator first.
+Start the CARLA simulator before running the sender.
 
-## 8. Run the live CARLA sender
+## 8. Run the CARLA V2 sender
 
-From the cloned repository:
+From the cloned repository on the CARLA host:
 
 ```powershell
 cd carla
 py -3.7 carla_kv260_live_v2.py
 ```
 
-The sender streams JPEG frames over TCP to:
+The sender targets:
 
 ```text
 192.168.50.2:5000
 ```
 
-The V2 sender creates additional traffic vehicles and pedestrians.
+The V2 script adds traffic vehicles and pedestrians so the KV260 DPU has useful detection targets.
 
-Car/person detection is performed by the **KV260 YOLOv5 Nano DPU**.
+**Detection responsibility**
 
-Intersection status is derived from **CARLA map ground truth** and is not a YOLO class.
+- Car/person/object boxes: **KV260 YOLOv5 Nano DPU**
+- Intersection status: **CARLA map ground truth**, not YOLO
 
-## 9. Open the live processed output
+## 9. Open the live processed result
 
-In a browser on the laptop/PC open:
+On the host PC/laptop open:
 
 ```text
 http://192.168.50.2:8080
@@ -132,45 +161,41 @@ http://192.168.50.2:8080
 Pipeline:
 
 ```text
-CARLA
-  ↓
-Ethernet TCP
-  ↓
+CARLA RGB
+   ↓
+TCP Ethernet
+   ↓
 KV260
- ├── HLS Sobel
- └── YOLOv5 Nano DPU
-  ↓
-ARM/OpenCV processing
-  ↓
-Live split screen
-  ↓
-Browser + AVI recording
+ ├─ HLS Sobel
+ └─ YOLOv5 Nano DPU
+   ↓
+ARM/OpenCV
+   ↓
+Live split-screen + AVI recording
 ```
 
-## 10. Recorded result
+## 10. Save the AVI result before rebooting
 
-The processed split-screen AVI is written on the KV260.
-
-Example:
+The output is written to:
 
 ```text
 /tmp/kv260_carla_live.avi
 ```
 
-Because `/tmp` is temporary, copy important results before rebooting:
+`/tmp` is temporary. Copy the result before powering off:
 
 ```bash
 sudo cp /tmp/kv260_carla_live.avi /home/petalinux/kv260_carla_live.avi
 sudo chown petalinux:petalinux /home/petalinux/kv260_carla_live.avi
 ```
 
-On Windows, this PetaLinux image requires legacy SCP mode because it does not include the SFTP server:
+Copy to Windows with legacy SCP mode:
 
 ```powershell
 scp -O petalinux@192.168.50.2:/home/petalinux/kv260_carla_live.avi "C:\Users\YOUR_NAME\Desktop\KV260_Results\kv260_carla_live.avi"
 ```
 
-## Validated live benchmark
+## Validated Live Benchmark
 
 ```text
 Frames processed         = 696
@@ -184,18 +209,4 @@ Average end-to-end/frame = 97.1754 ms
 Average end-to-end FPS   = 10.2907
 ```
 
-End-to-end timing excludes browser/HTTP delivery and one-time setup.
-
-## Build-from-source path
-
-The full source tree contains the HLS Sobel accelerator, C++ vision applications, PetaLinux recipes, device-tree changes, DPU kernel patch, and Sobel DMA driver.
-
-Matching toolchain versions:
-
-```text
-Vivado 2022.2
-Vitis / Vitis HLS 2022.2
-PetaLinux 2022.2
-Vitis AI 3.0
-Ubuntu 20.04
-```
+End-to-end timing excludes preview/HTTP delivery and one-time setup.
