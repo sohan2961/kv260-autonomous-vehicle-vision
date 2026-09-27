@@ -97,3 +97,11 @@ token*
 # FPGA / AI generated binaries
 *.xmodel
 *.bit.bin
+
+# Allow validated v1 release artifacts
+!v1/
+!v1/BOOT.BIN
+!v1/boot.scr
+!v1/image.ub
+!v1/system.bit
+!v1/SHA256SUMS.txt
