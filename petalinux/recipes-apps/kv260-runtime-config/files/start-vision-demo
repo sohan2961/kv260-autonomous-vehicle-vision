@@ -1,0 +1,41 @@
+#!/bin/sh
+
+MODEL=/usr/share/kv260-vision/model/yolov5_nano_pt.xmodel
+APP=/usr/bin/kv260-vision-network-app
+PORT="${1:-5000}"
+OUTPUT="${2:-/tmp/kv260_carla_live.avi}"
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Please run with sudo:"
+    echo "  sudo start-vision-demo"
+    exit 1
+fi
+
+if [ ! -x "$APP" ]; then
+    echo "ERROR: $APP not found"
+    exit 1
+fi
+
+if [ ! -f "$MODEL" ]; then
+    echo "ERROR: $MODEL not found"
+    exit 1
+fi
+
+modprobe xlnx_dpu 2>/dev/null || true
+modprobe sobel-dma-driver 2>/dev/null || true
+
+ip link set eth0 up 2>/dev/null || true
+
+echo "========================================"
+echo " KV260 PERMANENT VISION DEMO"
+echo "========================================"
+echo "Ethernet : 192.168.50.2"
+echo "TCP port : $PORT"
+echo "Model    : $MODEL"
+echo "Output   : $OUTPUT"
+echo "========================================"
+
+exec "$APP" \
+    "$MODEL" \
+    --tcp "$PORT" \
+    "$OUTPUT"

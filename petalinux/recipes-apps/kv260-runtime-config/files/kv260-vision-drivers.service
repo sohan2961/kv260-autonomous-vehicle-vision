@@ -1,0 +1,14 @@
+[Unit]
+Description=KV260 DPU and Sobel Vision Drivers
+After=systemd-modules-load.service
+Before=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe xlnx_dpu
+ExecStart=/sbin/modprobe sobel-dma-driver
+ExecStartPost=/bin/sh -c 'for i in 1 2 3 4 5; do [ -e /dev/dpu ] && [ -e /dev/sobel_accel ] && exit 0; sleep 1; done; exit 1'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

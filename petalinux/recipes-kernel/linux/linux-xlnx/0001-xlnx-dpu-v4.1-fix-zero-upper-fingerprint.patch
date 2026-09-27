@@ -1,0 +1,33 @@
+--- a/drivers/misc/xlnx_dpu.h
++++ b/drivers/misc/xlnx_dpu.h
+@@ -88,6 +88,7 @@
+ #define DPU_RST_ALL_CORES	(0xF)
+ #define DPU_INSTR_OFFSET	(12)
+ #define DPU_IP_V3_4		(0x34)
++#define DPU_IP_V4_1		(0x41)
+ 
+ enum DPU_DMA_DIR {
+ 	CPU_TO_DPU = 0,
+--- a/drivers/misc/xlnx_dpu.c
++++ b/drivers/misc/xlnx_dpu.c
+@@ -573,8 +573,20 @@
+ 	}
+ 	case DPUIOC_G_TGTID:
+ 	{
++		u32 ip_info;
+ 		u64 fingerprint = lo_hi_readq(xdpu->regs + DPU_TARGETID_L);
+ 
++		ip_info = ioread32(xdpu->regs + DPU_IPVER_INFO);
++
++		/*
++		 * DPUCZDX8G v4.1 / ISA1 compatibility:
++		 * restore type/ISA bytes only when hardware returned both
++		 * upper bytes as zero. Keep the feature code unchanged.
++		 */
++		if (!(fingerprint & 0xffff000000000000ULL) &&
++		    DPU_VER(ip_info) == DPU_IP_V4_1)
++			fingerprint |= 0x0101000000000000ULL;
++
+ 		if (copy_to_user(data, &fingerprint, sizeof(fingerprint)))
+ 			return -EFAULT;
+ 		break;

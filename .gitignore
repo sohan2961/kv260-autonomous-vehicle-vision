@@ -1,0 +1,99 @@
+# ============================================
+# KV260 Autonomous Vehicle Vision
+# Generated/build files must NOT be committed
+# ============================================
+
+# Vivado
+.Xil/
+*.jou
+*.log
+*.str
+*.dcp
+*.runs/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.srcs/sources_1/bd/*/ip/
+*.xsa
+*.bit
+
+# Vitis / Vitis HLS
+*.prj/
+solution*/
+.project
+.cproject
+.settings/
+Debug/
+Release/
+
+# PetaLinux / Yocto
+build/
+components/
+images/
+tmp/
+sstate-cache/
+downloads/
+*.wic
+*.wic.gz
+*.rootfs.*
+BOOT.BIN
+image.ub
+boot.scr
+
+# Vitis AI / models / large generated artifacts
+*.tar
+*.tar.gz
+*.zip
+*.onnx
+*.pt
+*.pth
+*.pb
+
+# Large video / image results
+*.avi
+*.mp4
+*.mkv
+*.mov
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary / backup
+*.bak
+*.backup
+*.old
+*.tmp
+checkpoints/
+ethernet_backup_*/
+ethernet_build_*/
+ethernet_work_*/
+presentation_backup_*/
+
+# Secrets / credentials
+.env
+*.pem
+*.key
+id_rsa
+id_ed25519
+credentials*
+token*
+
+# FPGA / AI generated binaries
+*.xmodel
+*.bit.bin

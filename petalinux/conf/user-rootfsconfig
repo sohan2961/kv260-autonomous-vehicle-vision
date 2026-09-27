@@ -1,0 +1,16 @@
+#Note: Mention Each package in individual line
+#These packages will get added into rootfs menu entry
+
+CONFIG_gpio-demo
+CONFIG_peekpoke
+CONFIG_vitis-ai-library
+CONFIG_vitis-ai-library-dev
+CONFIG_vitis-ai-library-dbg
+CONFIG_kv260-vision-app
+CONFIG_sobel-dma-driver
+CONFIG_fpga-runtime
+
+CONFIG_kv260-vision-video-app
+CONFIG_kv260-vision-network-app
+CONFIG_kv260-test-assets
+CONFIG_kv260-runtime-config

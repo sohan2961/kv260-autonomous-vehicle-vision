@@ -1,0 +1,19 @@
+KV260 Autonomous Vehicle Vision
+Live CARLA Benchmark
+====================
+
+Frames processed        : 696
+Average HLS Sobel       : 1.74246 ms
+Average preprocessing   : 10.3329 ms
+Average DPU execution   : 7.24071 ms
+Average postprocessing  : 1.97276 ms
+Average compute/frame   : 21.2888 ms
+Average compute FPS     : 46.9731
+Average end-to-end/frame: 97.1754 ms
+Average end-to-end FPS  : 10.2907
+
+Notes:
+- CARLA RGB camera: 640x480
+- Target stream rate: 10 FPS
+- Live input transported over TCP Ethernet
+- End-to-end excludes HTTP/browser delivery and one-time setup
