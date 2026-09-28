@@ -1,0 +1,85 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
+| Date         : Wed Aug 12 21:27:46 2026
+| Host         : rahman running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_methodology -file kv260_dpu_sobel_bd_wrapper_methodology_drc_routed.rpt -pb kv260_dpu_sobel_bd_wrapper_methodology_drc_routed.pb -rpx kv260_dpu_sobel_bd_wrapper_methodology_drc_routed.rpx
+| Design       : kv260_dpu_sobel_bd_wrapper
+| Device       : xck26-sfvc784-2LV-c
+| Speed File   : -2LV
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 9
++-----------+------------------+-------------------------------------------------------------------------------------------------------+------------+
+| Rule      | Severity         | Description                                                                                           | Violations |
++-----------+------------------+-------------------------------------------------------------------------------------------------------+------------+
+| TIMING-54 | Critical Warning | Scoped false path, clock group or max delay datapath only constraint between clocks                   | 2          |
+| TIMING-9  | Warning          | Unknown CDC Logic                                                                                     | 1          |
+| TIMING-46 | Warning          | Multicycle path with tied CE pins                                                                     | 1          |
+| TIMING-47 | Warning          | False path, asynchronous clock group or max delay datapath only constraint between synchronous clocks | 2          |
+| ULMTCS-1  | Warning          | Control Sets use limits recommend reduction                                                           | 1          |
+| CLKC-58   | Advisory         | PLLE4 with global clock driver has no LOC                                                             | 2          |
++-----------+------------------+-------------------------------------------------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-54#1 Critical Warning
+Scoped false path, clock group or max delay datapath only constraint between clocks  
+A scoped False Path timing constraint is set between clocks clk_pl_0 and clk_wiz_0_clk_dpu (see constraint position 15 in the Timing Constraint window in Vivado IDE). It is not recommended to define such scoped constraints between clocks as the constraint impacts timing paths outside of the scope.
+Related violations: <none>
+
+TIMING-54#2 Critical Warning
+Scoped false path, clock group or max delay datapath only constraint between clocks  
+A scoped False Path timing constraint is set between clocks clk_wiz_0_clk_dpu and clk_pl_0 (see constraint position 14 in the Timing Constraint window in Vivado IDE). It is not recommended to define such scoped constraints between clocks as the constraint impacts timing paths outside of the scope.
+Related violations: <none>
+
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-46#1 Warning
+Multicycle path with tied CE pins  
+One or more multicycle paths are defined between registers kv260_dpu_sobel_bd_i/dpuczdx8g_0/inst/GenDpu0.u_dpu0/m_dpu_top/m_conv_top/inst_pea/u_mults/u_fol_1x/toggle_dly10_r_reg/Q and kv260_dpu_sobel_bd_i/dpuczdx8g_0/inst/GenDpu0.u_dpu0/m_dpu_top/m_conv_top/inst_pea/u_mults/u_fol_1x/toggle_dly15_r_reg/D with a direct connection and the CE pins connected to VCC (see constraint position 13 in the Timing Constraint window in Vivado IDE).  This may result in an inaccurate path requirement.
+Related violations: <none>
+
+TIMING-47#1 Warning
+False path, asynchronous clock group or max delay datapath only constraint between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks clk_pl_0 and clk_wiz_0_clk_dpu (see constraint position 15 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via  set_false_path, set_clock_groups or set_max_delay -datapath_only may result in failure in hardware.
+Related violations: <none>
+
+TIMING-47#2 Warning
+False path, asynchronous clock group or max delay datapath only constraint between synchronous clocks  
+A False Path timing constraint is set between synchronous clocks clk_wiz_0_clk_dpu and clk_pl_0 (see constraint position 14 in the Timing Constraint window in Vivado IDE). Masking entire synchronous clock domains via  set_false_path, set_clock_groups or set_max_delay -datapath_only may result in failure in hardware.
+Related violations: <none>
+
+ULMTCS-1#1 Warning
+Control Sets use limits recommend reduction  
+This design uses 2421 control sets (vs. available limit of 29280, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
+Related violations: <none>
+
+CLKC-58#1 Advisory
+PLLE4 with global clock driver has no LOC  
+The PLLE4_ADV cell kv260_dpu_sobel_bd_i/clk_wiz_0/inst/plle4_adv_inst CLKIN pin is driven by global Clock buffer kv260_dpu_sobel_bd_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG and does not have a LOC constraint. It is recommended to LOC the PLL and use the CLOCK_DEDICATED_ROUTE constraint on the net driven by the global Clock buffer.
+Related violations: <none>
+
+CLKC-58#2 Advisory
+PLLE4 with global clock driver has no LOC  
+The PLLE4_ADV cell kv260_dpu_sobel_bd_i/sobel_clk_wiz/inst/plle4_adv_inst CLKIN pin is driven by global Clock buffer kv260_dpu_sobel_bd_i/zynq_ultra_ps_e_0/U0/buffer_pl_clk_0.PL_CLK_0_BUFG and does not have a LOC constraint. It is recommended to LOC the PLL and use the CLOCK_DEDICATED_ROUTE constraint on the net driven by the global Clock buffer.
+Related violations: <none>
+
+
