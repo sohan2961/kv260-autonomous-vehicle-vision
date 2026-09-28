@@ -4,6 +4,10 @@ Real-time autonomous-vehicle perception on the **AMD/Xilinx Kria KV260**, combin
 
 The project supports static images, recorded video, and a validated **live CARLA → Ethernet → KV260** pipeline with browser preview and AVI recording.
 
+## High-Level Architecture
+
+![KV260 High-Level Architecture](docs/architecture/high_level_architecture.png)
+
 ## Highlights
 
 - Custom HLS Sobel edge accelerator

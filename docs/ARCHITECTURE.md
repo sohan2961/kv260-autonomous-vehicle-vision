@@ -1,5 +1,9 @@
 # Architecture
 
+## Block Diagram
+
+![KV260 Block Diagram](architecture/block_diagram.png)
+
 ## End-to-End Data Flow
 
 ```text
