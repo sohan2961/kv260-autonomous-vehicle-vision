@@ -156,3 +156,18 @@ A complete one-command Vivado recreation script has **not yet been exported from
 ## License / Third-Party Components
 
 No repository-wide license is currently declared. The project includes or depends on third-party AMD/Xilinx, Vitis AI, PetaLinux, YOLO-related, OpenCV, and CARLA components that may have their own licenses and redistribution terms. Review those terms before redistributing derived binaries or making the repository public for broader use.
+
+## Video Demonstrations
+
+### 1. Live KV260 Vision Demonstration
+
+[Download the live YOLO + HLS Sobel demonstration](https://github.com/sohan2961/kv260-autonomous-vehicle-vision/releases/download/v1.0.0/kv260_carla_live.avi)
+
+### 2. CARLA V2 Demonstration
+
+[Download the CARLA V2 demonstration](https://github.com/sohan2961/kv260-autonomous-vehicle-vision/releases/download/v1.0.0/kv260_carla_live_v2.avi)
+
+Both recordings are available under GitHub Release v1.0.0.
+
+The videos demonstrate the live CARLA-to-KV260 processing pipeline,
+including YOLOv5 Nano object detection and hardware Sobel processing.
