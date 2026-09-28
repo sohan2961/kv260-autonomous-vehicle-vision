@@ -159,6 +159,18 @@ No repository-wide license is currently declared. The project includes or depend
 
 ## Video Demonstrations
 
+## Result Screenshot
+
+Below is a live result from the KV260 autonomous vehicle vision pipeline.
+
+![KV260 Live Demo](results/screenshots/kv260_live_demo_v2.png)
+
+This screenshot shows:
+- YOLOv5 Nano object detection on the left
+- HLS Sobel / lane view on the right
+- CARLA intersection indicator
+- real-time performance statistics
+
 ### 1. Live KV260 Vision Demonstration
 
 [Download the live YOLO + HLS Sobel demonstration](https://github.com/sohan2961/kv260-autonomous-vehicle-vision/releases/download/v1.0.0/kv260_carla_live.avi)
