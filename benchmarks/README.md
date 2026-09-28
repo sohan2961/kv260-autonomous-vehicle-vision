@@ -48,3 +48,13 @@ live_carla_benchmark.txt
 
 The full demonstration videos are available in GitHub
 Release v1.0.0.
+
+## Processing Latency Visualization
+
+![KV260 processing latency](figures/live_pipeline_latency.png)
+
+The figure shows the average processing time of each
+pipeline stage during the validated 696-frame CARLA test.
+
+Compute FPS and end-to-end FPS measure different aspects
+of the system and should not be interpreted as equivalent.
