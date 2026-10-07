@@ -1,0 +1,15 @@
+CARLA GPU Benchmark - Run 01
+
+GPU                        = NVIDIA GeForce GTX 1050 Ti
+Samples                    = 60
+Average GPU utilization    = 32.20 %
+Peak GPU utilization       = 60 %
+Average GPU memory         = 3144.95 MiB
+Peak GPU memory            = 3168 MiB
+Average GPU temperature    = 41.03 C
+Peak GPU temperature       = 43 C
+GPU power telemetry        = Not available via nvidia-smi
+
+Note:
+This GPU benchmark measures the Windows GPU used by CARLA.
+YOLO inference runs on the KV260 Vitis AI DPU, not on this GPU.

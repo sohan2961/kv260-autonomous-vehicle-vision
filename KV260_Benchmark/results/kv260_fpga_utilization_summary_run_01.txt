@@ -1,0 +1,43 @@
+KV260 FPGA Resource Utilization
+
+KV260 FPGA Utilization Benchmark - Run 01
+
+FINAL IMPLEMENTED DESIGN
+
+FPGA Resources
+-----------------------------------------
+CLB LUTs       = 57,163 / 117,120  = 48.81 %
+LUT as Memory  = 7,912  / 57,600   = 13.74 %
+CLB Registers  = 105,567 / 234,240 = 45.07 %
+Block RAM      = 17 / 144           = 11.81 %
+URAM           = 64 / 64            = 100.00 %
+DSPs           = 721 / 1,248        = 57.77 %
+
+Timing Results
+-----------------------------------------
+WNS            = +0.006 ns
+TNS            = 0.000 ns
+WHS            = +0.010 ns
+THS            = 0.000 ns
+
+Setup failing endpoints = 0
+Hold failing endpoints  = 0
+
+Timing Closure = PASS
+
+Notes
+-----------------------------------------
+These FPGA percentages represent static resource
+allocation of the implemented hardware design,
+not dynamic runtime utilization.
+
+URAM utilization of 100% means all 64 available
+URAM blocks are allocated by the implemented design.
+
+The positive WNS of +0.006 ns confirms setup timing
+closure, although the timing margin is small.
+
+Design:
+KV260 DPU + Custom HLS Sobel Accelerator
+Target:
+AMD/Xilinx Kria KV260

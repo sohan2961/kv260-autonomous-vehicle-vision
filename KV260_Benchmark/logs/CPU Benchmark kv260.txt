@@ -1,0 +1,808 @@
+login as: petalinux
+petalinux@192.168.50.2's password:
+kv260dpusobellinux:~$ pidof kv260-vision-network-app
+738
+kv260dpusobellinux:~$ top
+Mem: 1815052K used, 2211992K free, 1672776K shrd, 0K buff, 1672776K cached
+CPU: 29.2% usr  0.0% sys  0.0% nic 70.7% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.04 1.04 0.69 3/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   0 29.2 /usr/bin/kv260-vision-network-app
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  215     1 root     S    41904  1.0   1  0.0 /lib/systemd/systemd-journald
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+  191     1 rpc      S     4612  0.1   3  0.0 /usr/sbin/rpcbind -w -f
+  737   731 root     S     4224  0.1   2  0.0 sudo /usr/bin/kv260-vision-network
+Mem: 1821100K used, 2205944K free, 1678872K shrd, 0K buff, 1678872K cached
+CPU: 28.5% usr  0.7% sys  0.0% nic 70.6% idle  0.0% io  0.0% irq  0.1% sirq
+Load average: 1.04 1.04 0.69 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   0 28.6 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   1  0.4 /lib/systemd/systemd-journald
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  191     1 rpc      S     4612  0.1   3  0.0 /usr/sbin/rpcbind -w -f
+Mem: 1827148K used, 2199896K free, 1684796K shrd, 0K buff, 1684796K cached
+CPU: 28.2% usr  0.5% sys  0.0% nic 70.8% idle  0.0% io  0.0% irq  0.2% sirq
+Load average: 1.03 1.04 0.70 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   0 28.4 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   1  0.3 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  565     1 root     S     2008  0.0   1  0.0 /sbin/klogd -n
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  162     2 root     SW       0  0.0   0  0.0 [kpktgend_0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+Mem: 1833196K used, 2193848K free, 1690884K shrd, 0K buff, 1690884K cached
+CPU: 28.7% usr  0.6% sys  0.0% nic 70.4% idle  0.0% io  0.0% irq  0.1% sirq
+Load average: 1.03 1.04 0.70 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   0 28.6 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   1  0.4 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+  191     1 rpc      S     4612  0.1   3  0.0 /usr/sbin/rpcbind -w -f
+Mem: 1838992K used, 2188052K free, 1696808K shrd, 0K buff, 1696808K cached
+CPU: 28.6% usr  0.7% sys  0.0% nic 70.4% idle  0.0% io  0.0% irq  0.1% sirq
+Load average: 1.03 1.04 0.70 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.9 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  565     1 root     S     2008  0.0   0  0.0 /sbin/klogd -n
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+   11     2 root     IW       0  0.0   0  0.0 [rcu_sched]
+  762     2 root     IW       0  0.0   0  0.0 [kworker/0:1-eve]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+Mem: 1844788K used, 2182256K free, 1702552K shrd, 0K buff, 1702552K cached
+CPU: 29.0% usr  0.4% sys  0.0% nic 70.4% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.02 1.04 0.70 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.9 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  565     1 root     S     2008  0.0   0  0.0 /sbin/klogd -n
+  193     2 root     IW       0  0.0   1  0.0 [kworker/1:2-mm_]
+  633     2 root     IW       0  0.0   2  0.0 [kworker/u8:1-ed]
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+Mem: 1850556K used, 2176488K free, 1708584K shrd, 0K buff, 1708584K cached
+CPU: 28.6% usr  0.7% sys  0.0% nic 70.6% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.02 1.04 0.70 3/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     S     305m  7.7   1 28.8 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.4 /lib/systemd/systemd-journald
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  214     2 root     SW       0  0.0   3  0.0 [kpktgend_3]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+  764   757 petalinu R     5052  0.1   2  0.0 top
+Mem: 1856604K used, 2170440K free, 1714548K shrd, 0K buff, 1714548K cached
+CPU: 28.3% usr  0.7% sys  0.0% nic 70.7% idle  0.0% io  0.0% irq  0.1% sirq
+Load average: 1.02 1.04 0.70 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.6 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  565     1 root     S     2008  0.0   0  0.0 /sbin/klogd -n
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+Mem: 1862652K used, 2164392K free, 1720712K shrd, 0K buff, 1720712K cached
+CPU: 28.4% usr  0.6% sys  0.0% nic 70.9% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.02 1.04 0.71 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.4 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  565     1 root     S     2008  0.0   0  0.0 /sbin/klogd -n
+  213     2 root     SW       0  0.0   2  0.0 [kpktgend_2]
+  569     2 root     IW       0  0.0   3  0.0 [kworker/3:2-mm_]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+Mem: 1869176K used, 2157868K free, 1726964K shrd, 0K buff, 1726964K cached
+CPU: 28.1% usr  0.8% sys  0.0% nic 71.0% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.02 1.04 0.71 1/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     D     305m  7.7   1 28.3 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  755     1 root     S     2884  0.0   2  0.0 /usr/sbin/dropbear -i -r /etc/drop
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+   11     2 root     IW       0  0.0   0  0.0 [rcu_sched]
+  211     2 root     SW       0  0.0   0  0.0 [kpktgend_0]
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+Mem: 1875196K used, 2151848K free, 1732808K shrd, 0K buff, 1732808K cached
+CPU: 28.1% usr  0.9% sys  0.0% nic 70.9% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.02 1.04 0.71 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.6 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  565     1 root     S     2008  0.0   0  0.0 /sbin/klogd -n
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+q 764   757 petalinu R     5052  0.1   2  0.0 top
+Mem: 1881496K used, 2145548K free, 1739108K shrd, 0K buff, 1739108K cached
+CPU: 28.7% usr  0.8% sys  0.0% nic 70.3% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.01 1.03 0.71 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 29.1 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.4 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.0 top
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  163     2 root     SW       0  0.0   1  0.0 [kpktgend_1]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+Mem: 1887012K used, 2140032K free, 1745004K shrd, 0K buff, 1745004K cached
+CPU: 28.9% usr  0.7% sys  0.0% nic 70.2% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.01 1.03 0.71 5/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     S     305m  7.7   3 28.9 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   3  0.4 /lib/systemd/systemd-journald
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  565     1 root     S     2008  0.0   3  0.0 /sbin/klogd -n
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+Mem: 1892808K used, 2134236K free, 1750764K shrd, 0K buff, 1750764K cached
+CPU: 29.0% usr  0.8% sys  0.0% nic 70.2% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.01 1.03 0.72 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 29.1 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.0 top
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+Mem: 1898856K used, 2128188K free, 1756680K shrd, 0K buff, 1756680K cached
+CPU: 28.8% usr  0.6% sys  0.0% nic 70.4% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.01 1.03 0.72 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 28.8 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.4 /lib/systemd/systemd-journald
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+   11     2 root     IW       0  0.0   1  0.0 [rcu_sched]
+  762     2 root     IW       0  0.0   0  0.0 [kworker/0:1-eve]
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --a
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+Mem: 1904400K used, 2122644K free, 1762348K shrd, 0K buff, 1762348K cached
+CPU: 28.4% usr  0.9% sys  0.0% nic 70.5% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.01 1.03 0.72 2/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 28.7 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.4 /lib/systemd/systemd-journald
+  565     1 root     S     2008  0.0   2  0.1 /sbin/klogd -n
+  764   757 petalinu R     5052  0.1   2  0.0 top
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+Mem: 1910196K used, 2116848K free, 1768140K shrd, 0K buff, 1768140K cached
+CPU: 28.6% usr  0.9% sys  0.0% nic 70.4% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.01 1.03 0.72 3/107 764
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 28.9 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  164     2 root     SW       0  0.0   2  0.0 [kpktgend_2]
+  212     2 root     SW       0  0.0   1  0.0 [kpktgend_1]
+  641     2 root     IW       0  0.0   0  0.0 [kworker/u8:2-ev]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+q 567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+Mem: 1915992K used, 2111052K free, 1773992K shrd, 0K buff, 1773992K cached
+CPU: 28.2% usr  0.8% sys  0.0% nic 70.9% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.01 1.03 0.72 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 28.4 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  755     1 root     S     2884  0.0   0  0.0 /usr/sbin/dropbear -i -r /etc/drop
+  165     2 root     SW       0  0.0   3  0.0 [kpktgend_3]
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+Mem: 1921788K used, 2105256K free, 1779692K shrd, 0K buff, 1779692K cached
+CPU: 28.0% usr  0.9% sys  0.0% nic 70.9% idle  0.0% io  0.0% irq  0.1% sirq
+Load average: 1.01 1.03 0.73 6/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 28.6 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  565     1 root     S     2008  0.0   2  0.0 /sbin/klogd -n
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+Mem: 1927580K used, 2099464K free, 1785388K shrd, 0K buff, 1785388K cached
+CPU: 28.5% usr  0.8% sys  0.0% nic 70.5% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.01 1.03 0.73 4/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.4 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.4 /lib/systemd/systemd-journald
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  764   757 petalinu R     5052  0.1   2  0.0 top
+   11     2 root     IW       0  0.0   0  0.0 [rcu_sched]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+Mem: 1933096K used, 2093948K free, 1791084K shrd, 0K buff, 1791084K cached
+CPU: 28.4% usr  0.8% sys  0.0% nic 70.7% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.00 1.03 0.73 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.6 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  565     1 root     S     2008  0.0   3  0.0 /sbin/klogd -n
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+Mem: 1939116K used, 2087928K free, 1796792K shrd, 0K buff, 1796792K cached
+CPU: 28.0% usr  0.6% sys  0.0% nic 71.2% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.00 1.03 0.73 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.3 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  162     2 root     SW       0  0.0   0  0.0 [kpktgend_0]
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+  764   757 petalinu R     5052  0.1   2  0.0 top
+Mem: 1944912K used, 2082132K free, 1802568K shrd, 0K buff, 1802568K cached
+CPU: 28.3% usr  0.7% sys  0.0% nic 70.8% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.00 1.03 0.73 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.7 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.4 /lib/systemd/systemd-journald
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  191     1 rpc      S     4612  0.1   0  0.0 /usr/sbin/rpcbind -w -f
+Mem: 1950708K used, 2076336K free, 1808396K shrd, 0K buff, 1808396K cached
+CPU: 28.7% usr  0.7% sys  0.0% nic 70.5% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.00 1.03 0.73 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.8 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  565     1 root     S     2008  0.0   3  0.0 /sbin/klogd -n
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+Mem: 1956224K used, 2070820K free, 1814284K shrd, 0K buff, 1814284K cached
+CPU: 28.5% usr  0.7% sys  0.0% nic 70.7% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.00 1.03 0.74 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   1 28.7 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.4 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+  191     1 rpc      S     4612  0.1   0  0.0 /usr/sbin/rpcbind -w -f
+Mem: 1961768K used, 2065276K free, 1819980K shrd, 0K buff, 1819980K cached
+CPU: 27.8% usr  0.9% sys  0.0% nic 71.2% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.00 1.02 0.74 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 28.1 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  565     1 root     S     2008  0.0   0  0.0 /sbin/klogd -n
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+   11     2 root     IW       0  0.0   0  0.0 [rcu_sched]
+  213     2 root     SW       0  0.0   2  0.0 [kpktgend_2]
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+Mem: 1967816K used, 2059228K free, 1825836K shrd, 0K buff, 1825836K cached
+CPU: 27.8% usr  0.8% sys  0.0% nic 71.3% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.00 1.02 0.74 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 27.9 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  755     1 root     S     2884  0.0   0  0.0 /usr/sbin/dropbear -i -r /etc/drop
+  565     1 root     S     2008  0.0   0  0.0 /sbin/klogd -n
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  214     2 root     SW       0  0.0   3  0.0 [kpktgend_3]
+  762     2 root     IW       0  0.0   0  0.0 [kworker/0:1-eve]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+Mem: 1973612K used, 2053432K free, 1831696K shrd, 0K buff, 1831696K cached
+CPU: 28.0% usr  0.8% sys  0.0% nic 71.1% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.16 1.06 0.75 2/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     D     305m  7.7   3 28.4 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  211     2 root     SW       0  0.0   0  0.0 [kpktgend_0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+  764   757 petalinu R     5052  0.1   2  0.0 top
+Mem: 1979408K used, 2047636K free, 1837488K shrd, 0K buff, 1837488K cached
+CPU: 28.4% usr  0.6% sys  0.0% nic 70.8% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.15 1.06 0.75 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 28.6 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  565     1 root     S     2008  0.0   0  0.0 /sbin/klogd -n
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+Mem: 1985456K used, 2041588K free, 1843508K shrd, 0K buff, 1843508K cached
+CPU: 28.3% usr  0.9% sys  0.0% nic 70.6% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.14 1.06 0.75 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 28.7 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.3 /lib/systemd/systemd-journald
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  764   757 petalinu R     5052  0.1   2  0.0 top
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+  704     1 root     S     5260  0.1   3  0.0 /bin/login --
+  191     1 rpc      S     4612  0.1   0  0.0 /usr/sbin/rpcbind -w -f
+Mem: 1991504K used, 2035540K free, 1849556K shrd, 0K buff, 1849556K cached
+CPU: 28.5% usr  0.9% sys  0.0% nic 70.5% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.13 1.05 0.76 3/108 765
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 28.8 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.4 /lib/systemd/systemd-journald
+  755     1 root     S     2884  0.0   0  0.0 /usr/sbin/dropbear -i -r /etc/drop
+   11     2 root     IW       0  0.0   0  0.0 [rcu_sched]
+  163     2 root     SW       0  0.0   1  0.0 [kpktgend_1]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  748   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  749   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  750   596 root     S     8744  0.2   3  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   3  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+  567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+Mem: 1998056K used, 2028988K free, 1855948K shrd, 0K buff, 1855948K cached
+CPU: 28.7% usr  1.0% sys  0.0% nic 70.1% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.12 1.05 0.76 3/108 768
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 29.0 /usr/bin/kv260-vision-network-app
+  215     1 root     S    41904  1.0   0  0.4 /lib/systemd/systemd-journald
+  764   757 petalinu R     5052  0.1   2  0.1 top
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  565     1 root     S     2008  0.0   0  0.0 /sbin/klogd -n
+   10     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  766   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  767   596 root     S     8744  0.2   0  0.0 systemd-userwork
+  768   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   2  0.0 /lib/systemd/systemd-userdbd
+  210     1 root     S     8040  0.2   0  0.0 /usr/sbin/haveged -w 1024 -v 1 --F
+^C567     1 messageb S     5380  0.1   2  0.0 /usr/bin/dbus-daemon --system --ad
+kv260dpusobellinux:~$ which pidstat
+kv260dpusobellinux:~$ top -b -n 1 | head -20
+Mem: 2025552K used, 2001492K free, 1878992K shrd, 0K buff, 1878992K cached
+CPU: 30.9% usr  0.0% sys  0.0% nic 69.0% idle  0.0% io  0.0% irq  0.0% sirq
+Load average: 1.08 1.05 0.76 2/109 771
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  738   737 root     R     305m  7.7   3 28.5 /usr/bin/kv260-vision-network-app                                                                                                                                                              /usr/share/kv260-vision/model/yolov5_nano_pt.xmodel --tcp 5000 /tmp/kv260_cpu_te                                                                                                                                                             st.avi --stream 8080
+   10     2 root     SW       0  0.0   0  2.3 [ksoftirqd/0]
+  588     1 root     S    94148  2.3   2  0.0 /usr/sbin/tcf-agent -d -L- -l0
+  287     1 systemd- S    82808  2.0   1  0.0 /lib/systemd/systemd-timesyncd
+  215     1 root     S    41904  1.0   0  0.0 /lib/systemd/systemd-journald
+  726   725 petalinu S    22132  0.5   2  0.0 (sd-pam)
+    1     0 root     S    20760  0.5   2  0.0 {systemd} /init
+  216     1 root     S    15460  0.3   1  0.0 /lib/systemd/systemd-udevd
+  725     1 petalinu S    11604  0.2   3  0.0 /lib/systemd/systemd --user
+  245     1 systemd- S    10224  0.2   0  0.0 /lib/systemd/systemd-networkd
+  563     1 systemd- S     9172  0.2   0  0.0 /lib/systemd/systemd-resolved
+  574     1 root     S     9124  0.2   2  0.0 /lib/systemd/systemd-logind
+  766   596 root     S     8744  0.2   1  0.0 systemd-userwork
+  767   596 root     S     8744  0.2   0  0.0 systemd-userwork
+  768   596 root     S     8744  0.2   2  0.0 systemd-userwork
+  596     1 root     S     8736  0.2   2  0.0 /lib/systemd/systemd-userdbd
+kv260dpusobellinux:~$ ps -p 738 -o pid,comm,%cpu,%mem
+ps: invalid option -- 'p'
+BusyBox v1.34.1 () multi-call binary.
+
+Usage: ps [-o COL1,COL2=HEADER]
+
+Show list of processes
+
+        -o COL1,COL2=HEADER     Select columns for display
+kv260dpusobellinux:~$
+
+
+

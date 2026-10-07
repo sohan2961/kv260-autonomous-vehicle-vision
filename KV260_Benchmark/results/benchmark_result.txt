@@ -1,0 +1,20 @@
+========================================
+ VIDEO BENCHMARK SUMMARY
+========================================
+Frames processed       = 3708
+Average HLS Sobel       = 1.74329 ms
+Lane benchmark frames   = 3708
+Average lane HLS Sobel  = 1.74329 ms
+Average ARM/OpenCV lane = 29.715 ms
+Average lane pipeline   = 31.4583 ms
+Average lane FPS        = 31.7881
+Average preprocessing   = 10.3013 ms
+Average DPU execution   = 7.2444 ms
+Average postprocessing  = 1.9648 ms
+Average compute/frame   = 21.2538 ms
+Average compute FPS     = 47.0505
+Average end-to-end/frame = 105.428 ms
+Average end-to-end FPS   = 9.48512
+End-to-end excludes preview/HTTP delivery and one-time setup.
+Output video            = /tmp/kv260_lane_benchmark.avi
+========================================

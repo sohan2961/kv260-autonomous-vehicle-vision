@@ -1,0 +1,4 @@
+Samples     = 60
+Average CPU = 28.09 %
+Minimum CPU = 24.30 %
+Peak CPU    = 31.60 %

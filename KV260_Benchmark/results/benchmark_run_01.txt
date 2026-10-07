@@ -1,0 +1,33 @@
+KV260 CARLA LIVE BENCHMARK
+==========================
+Frames processed          = 3575
+Average HLS Sobel         = 1.74473 ms
+Average preprocessing     = 10.3456 ms
+Average DPU execution     = 7.24223 ms
+Average postprocessing    = 2.04438 ms
+Average compute/frame     = 21.3769 ms
+Average compute FPS       = 46.7794
+Average end-to-end/frame  = 105.73 ms
+Average end-to-end FPS    = 9.45806
+
+Note:
+End-to-end excludes preview/HTTP delivery and one-time setup.
+
+
+========================================
+ VIDEO BENCHMARK SUMMARY
+========================================
+Frames processed       = 9629
+Average HLS Sobel       = 1.74774 ms
+Average preprocessing   = 10.3488 ms
+Average DPU execution   = 7.24252 ms
+Average postprocessing  = 2.0089 ms
+Average compute/frame   = 21.348 ms
+Average compute FPS     = 46.8428
+Average end-to-end/frame = 105.024 ms
+Average end-to-end FPS   = 9.52167
+End-to-end excludes preview/HTTP delivery and one-time setup.
+Output video            = /tmp/kv260_cpu_test.avi
+========================================
+
+

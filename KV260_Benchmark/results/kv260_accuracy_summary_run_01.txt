@@ -1,0 +1,35 @@
+KV260 CARLA OBJECT-DETECTION ACCURACY - RUN 01
+==========================================================
+Evaluation frames: 1..1000
+CARLA max sent_frame_id: 1029
+KV260 max frame_id: 1000
+Ground-truth objects in common range: 400
+Logged predictions in common range: 79386
+GT-present classes: person, car, truck
+
+mAP@0.50      = 22.60%
+mAP@0.50:0.95 = 11.37%
+
+At confidence >= 0.50 and IoU >= 0.50
+TP = 10  FP = 76  FN = 390
+Precision = 11.63%
+Recall    = 2.50%
+F1-score  = 4.12%
+
+Best pooled F1 at IoU >= 0.50
+Confidence threshold = 0.2150
+TP = 67  FP = 296  FN = 333
+Precision = 18.46%
+Recall    = 16.75%
+F1-score  = 17.56%
+
+Per-class AP
+person     GT=122  AP50=0.55% AP50:95=0.36%
+bicycle    GT=0    AP50=N/A AP50:95=N/A
+car        GT=156  AP50=5.14% AP50:95=1.56%
+motorbike  GT=0    AP50=N/A AP50:95=N/A
+bus        GT=0    AP50=N/A AP50:95=N/A
+truck      GT=122  AP50=62.11% AP50:95=32.20%
+
+NOTE: CARLA GT is projected from 3D actor boxes; occlusion masks are not modeled.
+This is therefore a CARLA projected-ground-truth benchmark, not official COCO evaluation.

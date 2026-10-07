@@ -1,0 +1,21 @@
+KV260 RAM / CMA Benchmark - Run 01
+
+Linux-visible RAM       = 3.8 GiB
+System RAM used active  = 134.6 MB
+RAM available           = ~3.26 GiB
+
+Vision app VmRSS        = 40.06 MiB
+Vision app VmHWM        = 40.06 MiB
+Vision app VmSize       = 305.18 MiB
+Anonymous RAM           = 18.35 MiB
+Shared RAM              = 21.71 MiB
+Threads                 = 4
+Swap                    = 0
+
+CMA total               = 256 MiB
+CMA free                = 221.02 MiB
+CMA occupied            = 34.98 MiB
+
+Idle system RAM used    = 116.8 MB
+Active system RAM used  = 134.6 MB
+System RAM increase     = 17.8 MB

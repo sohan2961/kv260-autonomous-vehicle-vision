@@ -1,0 +1,7 @@
+class_id,class_name,gt_count,logged_prediction_count,AP50,AP50_95
+0,person,122,35685,0.005533,0.003567
+1,bicycle,0,1277,,
+2,car,156,33025,0.051379,0.015614
+3,motorbike,0,458,,
+5,bus,0,2313,,
+7,truck,122,6628,0.621143,0.322046

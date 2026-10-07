@@ -1,0 +1,25 @@
+KV260 Lane Processing Benchmark - Run 01
+
+Frames measured              = 3708
+
+HLS Sobel latency             = 1.74329 ms
+ARM/OpenCV lane latency       = 29.7150 ms
+Total lane pipeline latency   = 31.4583 ms
+Lane pipeline capability      = 31.7881 FPS
+
+Preprocessing                 = 10.3013 ms
+DPU inference                 = 7.2444 ms
+YOLO postprocessing           = 1.9648 ms
+
+DPU-path compute/frame        = 21.2538 ms
+DPU-path compute capability   = 47.0505 FPS
+
+End-to-end latency            = 105.428 ms/frame
+Actual end-to-end throughput  = 9.48512 FPS
+
+Interpretation:
+HLS Sobel performs edge extraction on FPGA.
+ARM/OpenCV performs ROI masking, thresholding, HoughLinesP,
+lane-candidate filtering/fitting and visualization.
+
+Compute FPS is not the actual live throughput.
