@@ -105,3 +105,8 @@ token*
 !v1/image.ub
 !v1/system.bit
 !v1/SHA256SUMS.txt
+
+
+
+# Keep deployed YOLOv5 Nano model
+!07_vitis_ai_yolo/model/yolov5_nano_pt.xmodel
