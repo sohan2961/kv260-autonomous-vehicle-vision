@@ -2,7 +2,11 @@
 
 Real-time autonomous-vehicle perception on the **AMD/Xilinx Kria KV260**, combining a custom **HLS Sobel accelerator** with a **Vitis AI DPU running YOLOv5 Nano**.
 
-https://github.com/user-attachments/assets/bd083b10-2994-410d-ac3f-161ea9adb65a
+https://github.com/user-attachments/assets/89048511-e04d-4531-915b-18cc7dc96ca6
+
+https://github.com/user-attachments/assets/05aaa4be-95a4-4b76-9f89-d48afbf59f4b
+
+## Note: Lane Preview Problem because we make it for CAR but we test our system in Bicycle in a a Bicycle Lane.
 
 The project supports static images, recorded video, and a validated **live CARLA → Ethernet → KV260** pipeline with browser preview and AVI recording.
 
